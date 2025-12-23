@@ -27,3 +27,10 @@ jobs:
           context: ./node
           push: true
           tags: ${{secrets.DOCKERHUB_USERNAME}}/super-app:node-latest
+
+      - name: Build and push (php)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./php
+          push: true
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/super-app:php-latest
