@@ -1,0 +1,28 @@
+services:
+  mysql:
+    image: mysql:8.0.28
+    environment:
+      MYSQL_DATABASE: "super-app"
+      MYSQL_ROOT_PASSWORD: "password"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+  node:
+    image: mkafri/super-app:node-latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+  php:
+    image: mkafri/super-app:php-latest
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
