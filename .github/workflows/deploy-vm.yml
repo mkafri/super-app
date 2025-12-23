@@ -19,8 +19,7 @@ jobs:
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
             set -e
-            sudo docker pull mkafri/super-app:node-latest
-            sudo docker stop super-app-node || true
-            sudo docker rm super-app-node || true
-            sudo docker run -d --name super-app-node --restart unless-stopped -p 3000:3000 mkafri/super-app:node-latest
-            sudo docker ps
+            cd ~/super-app
+            sudo docker compose pull
+            sudo docker compose up -d --remove-orphans
+            sudo docker compose ps
