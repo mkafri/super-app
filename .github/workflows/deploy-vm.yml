@@ -2,7 +2,7 @@ name: Deploy to Azure VM
 
 on:
   workflow_run:
-    workflows: ["Build and push Node image to DockerHub"]
+    workflows: ["Build and push images to DockerHub"]
     types: [completed]
   workflow_dispatch:
 
