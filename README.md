@@ -1,5 +1,9 @@
 # super-app
 
+347920639 מרתה כפרי
+206519712 יבגני סודמן
+347357519 אוסמונוב רוסלן
+
 Hi please setup mysql container: version 8.0.28
 use this  enviornment variable :
       MYSQL_DATABASE: 'super-app'
