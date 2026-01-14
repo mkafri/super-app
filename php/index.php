@@ -1,1 +1,1 @@
-<?php echo "I am running in a container?!";рр ?>
+<?php echo "I am running in a container?!*" ?>
